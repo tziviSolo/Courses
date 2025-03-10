@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthenticationService } from '../../services/authentication.service';
+import { error } from 'console';
 
 @Component({
   selector: 'app-login',
@@ -19,6 +20,10 @@ export class LoginComponent {
   }
 
   onSubmit() {
-    this.authService.loginUser(this.formGroup.value);
+    this.authService.loginUser(this.formGroup.value).
+      subscribe({
+        next: response => sessionStorage.setItem('token', response.token),
+        error: error => console.log(error)
+      });
   }
 }

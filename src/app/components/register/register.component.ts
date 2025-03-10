@@ -13,7 +13,7 @@ export class RegisterComponent {
 
   constructor(private formBuilder: FormBuilder, private authService: AuthenticationService) {
     this.formGroup = this.formBuilder.group({
-      username: ['', [Validators.required, Validators.minLength(3)]],
+      name: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', Validators.required],
       password: ['', Validators.required],
       role: ['', Validators.required]
@@ -21,6 +21,8 @@ export class RegisterComponent {
   }
 
   onSubmit() {
-    this.authService.registerUser(this.formGroup.value);
+    console.log(this.formGroup.value)
+    this.authService.registerUser(this.formGroup.value)
+    .subscribe((data) => console.log(data));
   }
 }
