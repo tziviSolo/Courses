@@ -7,15 +7,15 @@ import { MyCoursesComponent } from './components/my-courses/my-courses.component
 import { CoursesManagementComponent } from './components/courses-management/courses-management.component';
 
 export const routes: Routes = [
-    {
-        path: "",
-        component: HomeComponent,
-        children: [
-            { path: "login", component: LoginComponent },
-            { path: "register", component: RegisterComponent }
-        ]
-    },
-    { path: "courses", component: CoursesComponent },
-    { path: "myCourses", component: MyCoursesComponent },
-    { path: "coursesManagement", component: CoursesManagementComponent }
+    // {
+    //     path: "",
+    //     component: HomeComponent,
+    //     children: [
+    //         { path: "login", component: LoginComponent },
+    //         { path: "register", component: RegisterComponent }
+    //     ]
+    // },
+    // { path: "courses", component: CoursesComponent },
+    // { path: "myCourses", component: MyCoursesComponent },
+    // { path: "coursesManagement", component: CoursesManagementComponent }
 ];
