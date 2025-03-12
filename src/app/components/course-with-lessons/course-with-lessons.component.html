@@ -1,0 +1,7 @@
+<app-course-details [course]="course" [enableChanges]="changing"></app-course-details>
+@for(lesson of lessons;track lesson.Id){
+<app-lesson-details [lesson]="lesson" [enableChanges]="changing"></app-lesson-details>
+}
+@empty {
+<small>There are no lessons in course. </small>
+}

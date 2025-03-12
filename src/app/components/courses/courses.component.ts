@@ -17,7 +17,6 @@ export class CoursesComponent implements OnInit {
     this.coursesService.getAllCourses().subscribe({
       next: response => {
         this.courses = response;
-        console.log(this.courses)
       },
       error:
         error => console.log(error)

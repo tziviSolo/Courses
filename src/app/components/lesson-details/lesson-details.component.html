@@ -1,0 +1,12 @@
+<p>
+    <span>Title : </span>
+    <input name="title" (change)="onChangeLesson('title',title.value)" #title [(ngModel)]="lesson.Title"
+        [disabled]="!enableChanges" />
+
+    <span>Content : </span>
+    <input name="content" (change)="onChangeLesson('content',content.value)" #content [(ngModel)]="lesson.Content"
+        [disabled]="!enableChanges" />
+
+    <span>CourseId :</span>
+    <input [(ngModel)]="lesson.CourseId" disabled />
+</p>

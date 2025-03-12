@@ -1,5 +1,5 @@
 @for(c of courses;track c.id){
-<app-course-details [course]="c" [enableChanges]="true"></app-course-details>
+<app-course-with-lessons [course]="c" [changing]="true"></app-course-with-lessons>
 <button (click)="editCourse(c.id,c)">edit</button>
 <button (click)="deleteCourse(c.id)">delete</button>
 }@empty {
@@ -11,9 +11,23 @@
     <input name="title" [(ngModel)]="newCourse.title" (change)="onChangeCourse('title',title.value)" #title="ngModel" />
 
     <span>Description: </span>
-    <input name="desc" [(ngModel)]="newCourse.description" (change)="onChangeCourse('desc',desc.value)" #desc="ngModel" />
+    <input name="desc" [(ngModel)]="newCourse.description" (change)="onChangeCourse('desc',desc.value)"
+        #desc="ngModel" />
 
     <span>TeacherId :</span>
-    <input name="tId" [(ngModel)]="newCourse.teacherId" (change)="onChangeCourse('teacherId',tId.value)" #tId="ngModel" />
+    <input name="tId" [(ngModel)]="newCourse.teacherId" (change)="onChangeCourse('teacherId',tId.value)"
+        #tId="ngModel" />
 </p>
-<button (click)="addCourse(newCourse)">add</button>
+<button (click)="addCourse(newCourse)">add course</button>
+
+<p>
+    <span>Title : </span>
+    <input name="title" [(ngModel)]="newLesson.Title" (change)="onChangeLesson('title',title.value)" #title="ngModel" />
+
+    <span>Content : </span>
+    <input name="content" [(ngModel)]="newLesson.Content" (change)="onChangeLesson('content',content.value)" #content="ngModel" />
+
+    <span>CourseId :</span>
+    <input name="cId" [(ngModel)]="newLesson.CourseId" (change)="onChangeLesson('courseId',cId.value)" #cId="ngModel" />
+</p>
+<button (click)="addLesson()">add lesson</button>

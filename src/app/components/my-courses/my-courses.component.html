@@ -1,1 +1,6 @@
-<!-- <app-course-details></app-course-details> -->
+@for(c of courses;track c.id){
+<app-course-with-lessons [course]="c" [changing]="false"></app-course-with-lessons>
+}
+@empty {
+<small>There are no courses. </small>
+}
