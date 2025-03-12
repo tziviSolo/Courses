@@ -1,1 +1,6 @@
-<p>courses works!</p>
+@for(c of courses;track c.id){
+    <app-course-details [course]="c" [enableChanges]="true"></app-course-details>
+}
+@empty {
+<small>There are no items.</small>
+}

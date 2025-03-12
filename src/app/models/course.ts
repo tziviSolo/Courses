@@ -1,7 +1,8 @@
 export class Course {
     constructor(
-        public Title: string,
-        public Description: string,
-        public TeacherId: number
+        public id: number,
+        public title: string,
+        public description: string,
+        public teacherId: number
     ) { }
 }

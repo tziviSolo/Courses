@@ -1,0 +1,13 @@
+<p>
+    <span>Title : </span>
+    <input name="title" [(ngModel)]="course.title" (change)="onChangeCourse('title',title.value)" #title="ngModel"
+        [disabled]="!enableChanges" />
+
+    <span>Description : </span>
+    <input name="desc" [(ngModel)]="course.description" (change)="onChangeCourse('desc',desc.value)" #desc="ngModel"
+        [disabled]="!enableChanges" />
+
+    <span>TeacherId : </span>
+    <input name="tId" [(ngModel)]="course.teacherId" (change)="onChangeCourse('teacherId',tId.value)" #tId="ngModel"
+        [disabled]="!enableChanges" />
+</p>

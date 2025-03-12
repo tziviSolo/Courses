@@ -8,20 +8,20 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class UserService {
   private readonly Url = "http://localhost:3000/";
-  
-  constructor(private http: HttpClient) {}
+
+  constructor(private http: HttpClient) { }
 
   getAllUsers(): Observable<User[]> {
     return this.http.get<User[]>(`${this.Url}api/users`);
   }
 
-  getUserById(password: string): Observable<User> {
-    return this.http.get<User>(`${this.Url}api/users/${password}`);
+  getUserById(id: number): Observable<User> {
+    return this.http.get<User>(`${this.Url}api/users/${id}`);
   }
-  updateUserById() {
-
+  updateUserById(id: number, user: User): Observable<User> {
+    return this.http.put<User>(`${this.Url}api/users/${id}`, user);
   }
-  deleteUserById() {
-
+  deleteUserById(id: number) {
+    return this.http.delete<User>(`${this.Url}api/users/${id}`);
   }
 }

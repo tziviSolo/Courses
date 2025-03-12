@@ -1,1 +1,19 @@
-<p>courses-management works!</p>
+@for(c of courses;track c.id){
+<app-course-details [course]="c" [enableChanges]="true"></app-course-details>
+<button (click)="editCourse(c.id,c)">edit</button>
+<button (click)="deleteCourse(c.id)">delete</button>
+}@empty {
+<small>There are no courses.</small>
+}
+
+<p>
+    <span>Title : </span>
+    <input name="title" [(ngModel)]="newCourse.title" (change)="onChangeCourse('title',title.value)" #title="ngModel" />
+
+    <span>Description: </span>
+    <input name="desc" [(ngModel)]="newCourse.description" (change)="onChangeCourse('desc',desc.value)" #desc="ngModel" />
+
+    <span>TeacherId :</span>
+    <input name="tId" [(ngModel)]="newCourse.teacherId" (change)="onChangeCourse('teacherId',tId.value)" #tId="ngModel" />
+</p>
+<button (click)="addCourse(newCourse)">add</button>
