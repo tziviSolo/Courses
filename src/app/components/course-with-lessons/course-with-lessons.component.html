@@ -1,0 +1,12 @@
+<mat-card>
+    <app-course-details [course]="course" [enableChanges]="changing"></app-course-details>
+
+    <mat-divider></mat-divider>
+    @for(l of lessons;track l.id){
+    <app-lesson-details [lesson]="l" [enableChanges]="changing"></app-lesson-details>
+    <mat-divider></mat-divider>
+    }
+    @empty {
+    <small>There are no lessons in course. </small>
+    }
+</mat-card>

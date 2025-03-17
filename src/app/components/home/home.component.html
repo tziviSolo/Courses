@@ -1,0 +1,20 @@
+<mat-toolbar color="primary">
+    <span>Course Management Application</span>
+</mat-toolbar>
+
+<div class="welcome-message">
+    <p>Welcome to the course management application. To get started, click to log in or register.</p>
+</div>
+
+<nav>
+    <mat-list>
+        <mat-list-item>
+            <a mat-button routerLink="/login">Login</a>
+        </mat-list-item>
+        <mat-list-item>
+            <a mat-button routerLink="/register">Register</a>
+        </mat-list-item>
+    </mat-list>
+</nav>
+
+<router-outlet></router-outlet>

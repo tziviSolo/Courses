@@ -1,0 +1,19 @@
+<p>
+    <mat-form-field appearance="fill">
+        <mat-label>Title</mat-label>
+        <input matInput name="title" [(ngModel)]="course.title" (change)="onChangeCourse('title', title.value)" #title="ngModel"
+            [disabled]="!enableChanges" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Description</mat-label>
+        <input matInput name="desc" [(ngModel)]="course.description" (change)="onChangeCourse('desc', desc.value)" #desc="ngModel"
+            [disabled]="!enableChanges" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Teacher ID</mat-label>
+        <input matInput name="tId" [(ngModel)]="course.teacherId" (change)="onChangeCourse('teacherId', tId.value)" #tId="ngModel"
+            [disabled]="!enableChanges" />
+    </mat-form-field>
+</p>

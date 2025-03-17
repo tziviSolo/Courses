@@ -1,0 +1,24 @@
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput id="email" formControlName="email" />
+        @if(formGroup.get('email')?.errors){
+        <mat-error>
+            Please enter a valid email.
+        </mat-error>
+        }
+    </mat-form-field>
+
+
+    <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" id="password" formControlName="password" />
+        @if( formGroup.get('password')?.errors){
+        <mat-error>
+            Password must be at least 6 characters.
+        </mat-error>
+        }
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" [disabled]="formGroup.invalid" appMouseover>Log In</button>
+</form>

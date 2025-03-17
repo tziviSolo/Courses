@@ -1,0 +1,59 @@
+<mat-card>
+    @for(c of courses;track c.id){
+    <app-course-with-lessons [course]="c" [changing]="true"></app-course-with-lessons>
+    <button mat-button class="small-button" (click)="editCourse(c.id, c)">edit</button>
+    <button mat-button class="small-button" (click)="deleteCourse(c.id)">delete</button>
+    <mat-divider></mat-divider>
+    }@empty {
+    <small>There are no courses.</small>
+    }
+
+</mat-card>
+
+<!-- New Course Form -->
+<mat-card>
+    <p>
+        <mat-form-field appearance="fill">
+            <mat-label>Title</mat-label>
+            <input matInput name="title" [(ngModel)]="newCourse.title" (change)="onChangeCourse('title', title.value)"
+                #title="ngModel" />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Description</mat-label>
+            <input matInput name="desc" [(ngModel)]="newCourse.description"
+                (change)="onChangeCourse('desc', desc.value)" #desc="ngModel" />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Teacher ID</mat-label>
+            <input matInput name="tId" [(ngModel)]="newCourse.teacherId"
+                (change)="onChangeCourse('teacherId', tId.value)" #tId="ngModel" />
+        </mat-form-field>
+        <button mat-button class="small-button" (click)="addCourse(newCourse)">add course</button>
+    </p>
+</mat-card>
+
+<!-- New Lesson Form -->
+<mat-card>
+    <p>
+        <mat-form-field appearance="fill">
+            <mat-label>Title</mat-label>
+            <input matInput name="ltitle" (change)="onChangeLesson('title', ltitle.value)" #ltitle="ngModel"
+                [(ngModel)]="newLesson.title" />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Content</mat-label>
+            <input matInput name="content" (change)="onChangeLesson('content', content.value)" #content="ngModel"
+                [(ngModel)]="newLesson.content" />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>CourseId</mat-label>
+            <input matInput name="cId" (change)="onChangeLesson('courseId', cId.value)" #cId="ngModel"
+                [(ngModel)]="newLesson.courseId" />
+        </mat-form-field>
+        <button mat-button class="small-button" (click)="addLesson()">add lesson</button>
+    </p>
+</mat-card>
